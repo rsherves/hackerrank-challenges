@@ -10,9 +10,13 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-public class Solution {
 
-    // Complete the matrixRotation function below.
+/**
+ * Solution to Hackerank challenge "Matrix Rotation Layer".
+ * @See https://www.hackerrank.com/challenges/matrix-rotation-algo
+ */
+public class MatrixRotation {
+
     static void matrixRotation(List<List<Integer>> matrix, int r) {
         /*
          1) Identify rings, disassemble the matrix in rings
@@ -70,7 +74,7 @@ public class Solution {
             List<List<Integer>> unfoldedRings, int matrixRotations) {
         int numRings = unfoldedRings.size();
         int[] ringRotations = new int[numRings];
-        for (int i=0; i<unfoldedRings.size() ; i++) {
+        for (int i=0; i<numRings; i++) {
             int numRingElements = unfoldedRings.get(i).size();
             ringRotations[i] = matrixRotations % numRingElements;
         }
